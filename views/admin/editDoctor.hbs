@@ -1,0 +1,102 @@
+<div id="preloader">
+    <div class="loader"></div>
+</div>
+
+<div class="page-container">
+
+    <div class="sidebar-menu">
+        <div class="sidebar-header">
+            <div class="logo">
+                <a href="index.html"><img src="/assets/images/icon/logo.png" alt="logo"></a>
+            </div>
+        </div>
+        <div class="main-menu">
+            <div class="menu-inner">
+                <nav>
+                    <ul class="metismenu" id="menu">
+                        <li class="active">
+                            <a href="javascript:void(0)" aria-expanded="true"><i
+                                    class="ti-dashboard"></i><span>dashboard</span></a>
+                            <ul class="collapse">
+                                <li class="active"><a href="/admin/tab-view">Doctors</a></li>
+                                <li><a href="/admin/tab-view">Patients</a></li>
+                                <li><a href="/admin/tab-view">Appointments</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+
+    <div class="main-content">
+
+
+        <div class="page-title-area">
+            <div class="row align-items-center">
+                <div class="col-sm-6">
+                    <div class="breadcrumbs-area clearfix">
+                        <h4 class="page-title pull-left">Welcome to dashboard !! </h4>
+                        <ul class="breadcrumbs pull-left">
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-sm-6 clearfix">
+                    <div class="user-profile pull-right">
+                        <img class="avatar user-thumb" src="/assets/images/author/avatar.png" alt="avatar">
+                        <h4 class="user-name dropdown-toggle" data-toggle="dropdown">Admin<i
+                                class="fa fa-angle-down"></i></h4>
+                        <div class="dropdown-menu">
+                            <!--   <a class="dropdown-item" href="#">Message</a>
+                                <a class="dropdown-item" href="#">Settings</a> -->
+                            <a class="dropdown-item" href="/admin/logout">Log Out</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <section>
+            <div class="container">
+                <h3 class="mt-3">Edit Doctors</h3>
+                <form action="/admin/edit-doctor/{{doctor._id}}" method="POST" enctype="multipart/form-data">
+                    <div class="form-group mt-3">
+                        <label for="">Doctor Name </label>
+                        <input type="text" class="form-control" name="doctorName" placeholder="Doctor Name"
+                            value="{{doctor.doctorName}}">
+
+                    </div>
+                    <div class="form-group">
+                        <label for="">Specialised</label>
+                        <input type="text" class="form-control" name="specialised" placeholder="Specialised"
+                            value="{{doctor.specialised}}">
+                    </div>
+                    <div class="form-group">
+                        <label for="">Speciality</label>
+                        <input type="text" class="form-control" name="speciality" placeholder="Speciality"
+                            value="{{doctor.speciality}}">
+                    </div>
+                    <div class="form-group">
+                        <label for="">Account status</label>
+                        <input type="text" class="form-control" name="accountStatus" placeholder="Account status"
+                            value="{{doctor.accountStatus}}">
+                    </div>
+                    <div class=" btn-sm ">
+                        <label for="">Image</label>
+                        <img src="/doctors-images/{{doctor._id}}.jpg" alt="" style="width: 100px;height:auto"
+                            id="imgView">
+                        <input type="file" name="Image" class="form-control" onchange="viewImage(event)">
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">Submit</button>
+
+                </form>
+            </div>
+    </div>
+    </section>
+
+    <script>
+        function viewImage(event) {
+            document.getElementById('imgView').src = URL.createObjectURL(event.target.files[0])
+        }
+    </script>
