@@ -136,11 +136,9 @@
               </tr>
             </thead>
             <tbody>
-              {{#each doctors }}
-              {{!-- {{#if this._id==docId}}
-                  {{else}} --}}
-              <tr>
-                {{!-- <th scope="row">1</th> --}}
+              {{#each doctors }}   
+        
+              <tr>               
                 <td>{{this.doctorName}}</td>
                 <td>{{this.specialised}}</td>
                 <td>{{this.speciality}}</td>
@@ -151,8 +149,8 @@
                   <a href="/admin/delete-doctor/{{this._id}}" class="btn btn-danger"
                     onclick="return confirm('Do you want to delete {{this.doctorName}}?')">Delete</a>
                 </td>
-              </tr>
-              {{!--     {{/if}} --}}
+              </tr>         
+        
               {{/each}}
             </tbody>
           </table>
@@ -183,7 +181,6 @@
             <tbody>
 
               {{#each patients}}
-
               <tr>
                 {{!-- <th scope="row">1</th> --}}
                 <td>{{this.patientName}}</td>
@@ -197,9 +194,7 @@
                     onclick="return confirm('Do you want to delete {{this.patientName}}?')">Delete</a>
                 </td>
               </tr>
-
               {{/each}}
-
             </tbody>
           </table>
         </div>

@@ -64,6 +64,14 @@ module.exports = {
             })
         })
     },
+    getPatientDetails:(patId)=>{
+        return new Promise ((resolve,reject)=>{
+            db.get().collection(collection.PATIENTS_COLLECTION).findOne({_id:objectId(patId)}).then((patientDetails)=>{
+            resolve(patientDetails)
+            console.log(patientDetails);
+            })
+        })
+    },
     updateDoctor:(docId,docDetails)=>{
         /* docDetails.Price=parseInt(prodDetails.Price) */
         return new Promise((resolve,reject)=>{
@@ -81,14 +89,7 @@ module.exports = {
             })
         })
     },
-    getPatientDetails:(patId)=>{
-        return new Promise ((resolve,reject)=>{
-            db.get().collection(collection.PATIENTS_COLLECTION).findOne({_id:objectId(patId)}).then((patientDetails)=>{
-            resolve(patientDetails)
-            console.log(patientDetails);
-            })
-        })
-    },
+    
     updatePatient:(patId,patDetails)=>{
         /* docDetails.Price=parseInt(prodDetails.Price) */
         return new Promise((resolve,reject)=>{
@@ -105,6 +106,20 @@ module.exports = {
                 resolve()
             })
         })
+    },
+    changeStatusDelete:(docId)=>{      
+        return new Promise (async(resolve,reject)=>{
+            let doctors=await db.get().collection(collection.DOCTORS_COLLECTION).find().toArray()
+                console.log(doctors[0]._id);
+                if(docId==doctors._id){
+                    db.get().doctors.update({status:"true"},{$set:{status:"false"}})
+                }  resolve()
+                console.log(doctors);
+          
+            console.log(docId);
+           
+        })
+          
     }
 
     }

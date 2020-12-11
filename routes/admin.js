@@ -72,7 +72,11 @@ router.get('/logout', (req, res) => {
 })
 router.get('/delete-doctor/:id', (req, res) => {
   let docId = req.params.id
-  res.redirect('admin/tabview', { docId })
+  adminHelpers.changeStatusDelete(docId).then((doctors) => {
+    res.redirect('admin/tabview')
+  })
+
+
 })
 router.get('/edit-doctor/:id', async (req, res) => {
   let doctor = await adminHelpers.getDoctorDetails(req.params.id)
