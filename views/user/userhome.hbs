@@ -58,9 +58,7 @@
                             <a class="nav-link" href="#contact">Contact</a>
                         </li>
                         <li>
-                            <button type="button" class="btn  ml-lg-2 w3ls-btn" data-toggle="modal" aria-pressed="false" data-target="#exampleModal">
-                                Login
-                            </button>
+                            <a href="/user-login" class="btn btn-success ml-auto ">Login</a>
                         </li>
                     </ul>
                 </div>
@@ -118,11 +116,11 @@
 			<div class="row">
 				<div class="col-lg-4 col-md-6">
 					<div class="img1 img-grid  d-flex align-items-end justify-content-center p-3">
-						<div class="img_text_w3ls">
+					{{!-- 	<div class="img_text_w3ls"> --}}
 							<h4>Emergency Help</h4>
 							<span> </span>
 							<p>Sed porttitor lectus nibh ras ultricies ligula sed magna dictum porta. </p>
-						</div>
+					{{!-- 	</div> --}}
 					</div>
 				</div>
 				<div class="col-lg-4 col-md-6 my-md-0 mt-4">
@@ -261,98 +259,7 @@
 	<!-- //footer -->
 
 	<!-- login  -->
-    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Login</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <form action="#" method="post">
-                        <div class="form-group">
-                            <label for="recipient-name" class="col-form-label">Username</label>
-                            <input type="text" class="form-control" placeholder=" " name="Name" id="recipient-name" required="">
-                        </div>
-                        <div class="form-group">
-                            <label for="password" class="col-form-label">Password</label>
-                            <input type="password" class="form-control" placeholder=" " name="Password" id="password" required="">
-                        </div>
-                        <div class="right-w3l">
-                            <input type="submit" class="form-control" value="Login">
-                        </div>
-                        <div class="row sub-w3l my-3">
-                            <div class="col sub-agile">
-                                <input type="checkbox" id="brand1" value="">
-                                <label for="brand1" class="text-secondary">
-                                    <span></span>Remember me?</label>
-                            </div>
-                            <div class="col forgot-w3l text-right">
-                                <a href="#" class="text-secondary">Forgot Password?</a>
-                            </div>
-                        </div>
-                        <p class="text-center dont-do">Don't have an account?
-                            <a href="#" data-toggle="modal" data-target="#exampleModalCenter2" class="text-dark font-weight-bold">
-                                Register Now</a>
-								
-                        </p>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- //login -->
-	 <!--/Register-->
-    <div class="modal fade" id="exampleModalCenter2" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content">
-                <div class="modal-header text-center">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <div class="login px-4 mx-auto mw-100">
-                        <h5 class="modal-title text-center text-dark mb-4">REGISTER NOW</h5>
-                        <form action="#" method="post">
-                            <div class="form-group">
-                                <label class="col-form-label">First name</label>
-
-                                <input type="text" class="form-control" id="validationDefault01" placeholder="" required="">
-                            </div>
-                            <div class="form-group">
-                                <label class="col-form-label">Last name</label>
-                                <input type="text" class="form-control" id="validationDefault02" placeholder="" required="">
-                            </div>
-
-                            <div class="form-group">
-                                <label class="mb-2 col-form-label">Password</label>
-                                <input type="password" class="form-control" id="password1" placeholder="" required="">
-                            </div>
-                            <div class="form-group">
-                                <label class="col-form-label">Confirm Password</label>
-                                <input type="password" class="form-control" id="password2" placeholder="" required="">
-                            </div>
-							<div class="reg-w3l">
-								<button type="submit" class="form-control submit mb-4">Register</button>
-                           </div>
-						   <p class="text-center pb-4">
-                                <a href="#" class="text-secondary">By clicking Register, I agree to your terms</a>
-                            </p>
-                        </form>
-
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </div>
-    <!--//Register-->
-
-    <!-- //footer -->
-    <!-- js -->
+    
     <script src="js/jquery-2.2.3.min.js"></script>
     <!-- //js -->
 	<script src="js/minimal-slider.js"></script>

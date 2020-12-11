@@ -131,4 +131,5 @@ router.post('/edit-patient/:id', (req, res) => {
   })
 })
 
+
 module.exports = router;
