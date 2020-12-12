@@ -110,13 +110,14 @@ module.exports = {
     changeStatusDelete:(docId)=>{      
         return new Promise (async(resolve,reject)=>{
             let doctors=await db.get().collection(collection.DOCTORS_COLLECTION).find().toArray()
-                console.log(doctors[0]._id);
-                if(docId==doctors._id){
-                    db.get().doctors.update({status:"true"},{$set:{status:"false"}})
-                }  resolve()
-                console.log(doctors);
-          
-            console.log(docId);
+               
+                for(var i=0;i<4;i++){
+                    console.log(doctors[i]);
+                    if(docId==doctors[i]._id){
+                    db.get().collection(collection.DOCTORS_COLLECTION).updateOne({_id: objectId(docId)},{$set:{status:"true"}})  
+                    } 
+                } 
+          console.log(doctors);
            
         })
           

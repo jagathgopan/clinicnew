@@ -43,7 +43,7 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav ml-lg-auto text-center">
                         <li class="nav-item active  mr-3 mt-lg-0 mt-3">
-                            <a class="nav-link" href="index.html">Home
+                            <a class="nav-link" href="">Home
                                 <span class="sr-only">(current)</span>
                             </a>
                         </li>
@@ -112,64 +112,29 @@
 				<h3 class="w3l-sub">Doctors</h4>
 		
 			</div>
-			<!-- case studies row -->
-			<div class="row">
-				<div class="col-lg-4 col-md-6">
-					<div class="img1 img-grid  d-flex align-items-end justify-content-center p-3">
-					{{!-- 	<div class="img_text_w3ls"> --}}
-							<h4>Emergency Help</h4>
-							<span> </span>
-							<p>Sed porttitor lectus nibh ras ultricies ligula sed magna dictum porta. </p>
-					{{!-- 	</div> --}}
-					</div>
-				</div>
-				<div class="col-lg-4 col-md-6 my-md-0 mt-4">
-					<div class="img1 img2 img-grid  d-flex align-items-end justify-content-center p-3">
-						<div class="img_text_w3ls">
-							<h4>Heart Surgery</h4>
-							<span> </span>
-							<p>Sed porttitor lectus nibh ras ultricies ligula sed magna dictum porta. </p>
-						</div>
-					</div>
-				</div>
-				<div class="col-lg-4 col-md-6 my-lg-0 mt-4">
-					<div class="img1 img3 img-grid  d-flex align-items-end justify-content-center p-3">
-						<div class="img_text_w3ls">
-							<h4>Emergency Care</h4>
-							<span> </span>
-							<p>Sed porttitor lectus nibh ras ultricies ligula sed magna dictum porta. </p>
-						</div>
-					</div>
-				</div>
-				<div class="col-lg-4 col-md-6 mt-4">
-					<div class="img1 img5 img-grid  d-flex align-items-end justify-content-center p-3">
-						<div class="img_text_w3ls">
-							<h4>Dental Care</h4>
-							<span> </span>
-							<p>Sed porttitor lectus nibh ras ultricies ligula sed magna dictum porta. </p>
-						</div>
-					</div>
-				</div>
-				<div class="col-lg-4 col-md-6  mt-4">
-					<div class="img1 img4 img-grid  d-flex align-items-end justify-content-center p-3">
-						<div class="img_text_w3ls">
-							<h4>Individual Approach</h4>
-							<span> </span>
-							<p>Sed porttitor lectus nibh ras ultricies ligula sed magna dictum porta. </p>
-						</div>
-					</div>
-				</div>
-				<div class="col-lg-4 col-md-6 mt-4">
-					<div class="img1 img6 img-grid  d-flex align-items-end justify-content-center p-3">
-						<div class="img_text_w3ls">
-							<h4>Qualified Doctors</h4>
-							<span> </span>
-							<p>Sed porttitor lectus nibh ras ultricies ligula sed magna dictum porta. </p>
-						</div>
-					</div>
-				</div>
-			</div>
-			<!-- //case studies row -->
+			 <section>
+        <div class="container mt-5">
+            <div class="row">
+                {{#each doctors }}
+                <div class="col-md-4">
+                    <div class="card" style="width: 18rem;">
+                        <img src="/doctors-images/{{this._id}}.jpg"
+                            class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">{{this.doctorName}}</h5>
+                            <h4 class="cart-text">{{this.specialised}}</h4>
+                            <p class="card-text">{{this.speciality}}</p>
+                           {{!--  <a href="/add-to-cart/{{this._id}}" class="btn btn-primary">Add to Cart</a> --}}
+                           <a href="/user-login" class="btn btn-warning ml-auto ">Book Now</a>
+                        </div>
+                    </div>
+                </div>
+               
+               {{/each}}
+            </div>
+        </div>
+    </section>
+    
 		</div>
 	</section>
 </div>

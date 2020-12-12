@@ -137,7 +137,7 @@
             </thead>
             <tbody>
               {{#each doctors }}   
-        
+        {{#if status}}
               <tr>               
                 <td>{{this.doctorName}}</td>
                 <td>{{this.specialised}}</td>
@@ -149,7 +149,8 @@
                   <a href="/admin/delete-doctor/{{this._id}}" class="btn btn-danger"
                     onclick="return confirm('Do you want to delete {{this.doctorName}}?')">Delete</a>
                 </td>
-              </tr>         
+              </tr>    
+              {{/if}}     
         
               {{/each}}
             </tbody>
