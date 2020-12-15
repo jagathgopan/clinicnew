@@ -43,9 +43,15 @@ router.post('/user-login', (req, res) => {
 
 })
 router.get('/logout',(req,res)=>{
-  console.log("jkgkfdhavds,fkvba,bdav,vjbda,jnh,hjn");
   req.session.destroy()
   res.redirect('/')
 })
 
+router.get('/book-doctor',(req,res)=>{
+  if (req.session.loggedIn){
+res.render('user/bookDoctor')
+  }else{
+    res.redirect('user/userLogin')
+  }
+})
 module.exports = router;
