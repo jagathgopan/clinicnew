@@ -70,10 +70,16 @@ router.get('/logout', (req, res) => {
   console.log("session destroyed");
   res.redirect('/admin')
 })
-router.get('/delete-doctor/:id', (req, res) => {
+router.get('/delete-doctor/:id',(req, res) => {
   let docId = req.params.id
-  adminHelpers.changeStatusDelete(docId).then(() => {
-    res.redirect('admin/tabview')
+ adminHelpers.changeStatusDelete(docId).then(() => {
+
+ adminHelpers.getAllDoctors().then((doctors) => {
+      adminHelpers.getAllPatients().then((patients) => {
+        res.redirect('admin/tabview', { doctors, patients });
+      })
+
+    })
   })
 
 
