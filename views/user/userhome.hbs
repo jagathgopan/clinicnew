@@ -65,8 +65,15 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     <li class=""><a href="#doctors">Doctors</a></li>
                     <li class=""><a href="#contact">Contact Us</a></li>
                 </ul>
+
                 <div class="login-icon ml-2">
+                    {{#if user}}
+                    <a class="user" href="/logout">{{user.userName}}</a>
+                    
+                    {{else}}
                     <a class="user" href="/user-login"> Login</a>
+                    {{/if}}
+                  
                 </div>
             </nav>
             <div class="clear"></div>
@@ -140,7 +147,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             </div>
         </div>
     </div>
-  
+
     <!-- services -->
     <section class="services py-5" id="doctors">
         <div class="container py-lg-5">
@@ -160,8 +167,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                     <p class="card-text">{{this.speciality}}</p>
                                     {{!-- <a href="/add-to-cart/{{this._id}}" class="btn btn-primary">Add to Cart</a>
                                     --}}
-                                    <button onclick="addToCart('{{this._id}}')" class="btn btn-warning">Book
-                                        Now</button>
+                                   <a href="/user-login" class="btn btn-primary">Book Now</a>
                                 </div>
                             </div>
 
@@ -175,7 +181,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             </div>
         </div>
     </section>
-    
+
 
     <!-- appointment -->
     <section class="appointment text-center py-5">
