@@ -51,7 +51,7 @@ module.exports = {
     },
     getAllPatients: () => {
         return new Promise(async (resolve, reject) => {
-            let patients = await db.get().collection(collection.PATIENTS_COLLECTION).find().toArray()
+            let patients = await db.get().collection(collection.PATIENTS_COLLECTION).find({status:'true'}).toArray()
             resolve(patients)
         })
 
@@ -110,8 +110,17 @@ module.exports = {
     changeStatusDelete: (docId) => {
         return new Promise(async (resolve, reject) => {
             let doctors = await db.get().collection(collection.DOCTORS_COLLECTION).find().toArray()
-            db.get().collection(collection.DOCTORS_COLLECTION).updateOne({ _id: objectId(docId) }, { $set: { status:'false'} })
+            db.get().collection(collection.DOCTORS_COLLECTION).updateOne({ _id: objectId(docId) }, { $set: { status:'true'} })
             console.log(doctors);
+            resolve()
+        })
+
+    },
+    changeStatusDeletePatient:(patId) => {
+        return new Promise(async (resolve, reject) => {
+            let patients = await db.get().collection(collection.PATIENTS_COLLECTION).find().toArray()
+            db.get().collection(collection.PATIENTS_COLLECTION).updateOne({ _id: objectId(patId) }, { $set: { status:'false'} })
+            console.log(patients);
             resolve()
         })
 

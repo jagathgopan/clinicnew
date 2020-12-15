@@ -70,13 +70,25 @@ router.get('/logout', (req, res) => {
   console.log("session destroyed");
   res.redirect('/admin')
 })
-router.get('/delete-doctor/:id',(req, res) => {
+router.get('/delete-doctor/:id',async (req, res) => {
   let docId = req.params.id
- adminHelpers.changeStatusDelete(docId).then(() => {
-
+ await adminHelpers.changeStatusDelete(docId).then(() => {
+  let admin = req.session.admin
  adminHelpers.getAllDoctors().then((doctors) => {
       adminHelpers.getAllPatients().then((patients) => {
-        res.redirect('admin/tabview', { doctors, patients });
+        res.render('admin/tabview', { doctors,admin, patients });
+      })
+
+    })
+  })
+})
+router.get('/delete-patient/:id',async (req, res) => {
+  let patId = req.params.id
+ await adminHelpers.changeStatusDeletePatient(patId).then(() => {
+  let admin = req.session.admin
+ adminHelpers.getAllDoctors().then((doctors) => {
+      adminHelpers.getAllPatients().then((patients) => {
+        res.render('admin/tabview', { doctors,admin, patients });
       })
 
     })
